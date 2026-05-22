@@ -1,10 +1,11 @@
 import cv2
 import mediapipe as mp
-
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 mp_face_mesh = mp.solutions.face_mesh
 mp_drawing = mp.solutions.drawing_utils
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 with mp_face_mesh.FaceMesh(
     max_num_faces=5,

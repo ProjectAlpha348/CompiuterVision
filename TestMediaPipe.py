@@ -1,13 +1,14 @@
 import cv2
 import mediapipe as mp
 import sys
-
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 print(sys.executable)
 mp_face_mesh = mp.solutions.face_mesh
 mp_drawing = mp.solutions.drawing_utils
 mp_styles = mp.solutions.drawing_styles
 
-cap = cv2.VideoCapture(1)  # la tua webcam reale
+cap = cv2.VideoCapture(0)  # la tua webcam reale
 
 with mp_face_mesh.FaceMesh(
     max_num_faces=5,
